@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Advizier design tokens
+   Colours follow the reference palette (adship.nl) exactly.
+   --------------------------------------------------------------- */
+@theme {
+  --color-ground: #050510;      /* dark sections */
+  --color-ink: #0a0a12;         /* text on light */
+  --color-blue: #0606ea;        /* buttons, highlights on light */
+  --color-blue-hover: #1d1dff;
+  --color-accent: #6e6eff;      /* highlights on dark */
+  --color-line: #e6e6f0;        /* hairlines on light */
+  --color-line-dark: #1b1b2b;   /* hairlines on dark */
+  --color-soft: #5c5c6e;        /* secondary text on light */
+  --color-muted: #9a9aa6;       /* secondary text on dark */
+  --color-body-dark: #b4b4c4;   /* body text on dark */
+  --color-surface: #ededf7;     /* light tinted surface */
+  --color-positive: #16c35b;
+  --color-negative: #ff2d55;
+
+  --radius-pill: 999px;
+}
+
+@theme inline {
+  --font-heading: var(--font-fustat), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-wordmark: var(--font-cinzel), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-ground);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Faint grid that sits behind hero and section backgrounds */
+.raster-dark {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.raster-light {
+  background-image:
+    linear-gradient(rgba(10, 10, 18, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 18, 0.06) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+/* Blue glow used on the dark hero and CTA sections */
+.glow-right::before,
+.glow-left::before {
+  content: "";
+  position: absolute;
+  top: -320px;
+  width: 1100px;
+  height: 1100px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(6, 6, 234, 0.6) 0%,
+    rgba(6, 6, 234, 0.22) 32%,
+    rgba(5, 5, 16, 0) 62%
+  );
+}
+
+.glow-right::before {
+  right: -260px;
+}
+
+.glow-left::before {
+  left: -420px;
+}
+
+/* Native <details> accordions: hide the default marker */
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
