@@ -25,7 +25,7 @@
 @theme inline {
   --font-heading: var(--font-fustat), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-wordmark: var(--font-cinzel), Georgia, serif;
+  --font-wordmark: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {

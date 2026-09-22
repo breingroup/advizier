@@ -20,10 +20,12 @@ const inter = localFont({
   display: "swap",
 });
 
-const cinzel = localFont({
-  src: "./fonts/Cinzel.woff2",
-  weight: "400 900",
-  variable: "--font-cinzel",
+const poppins = localFont({
+  src: [
+    { path: "./fonts/Poppins-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Poppins-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -56,7 +58,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl" className={`${fustat.variable} ${inter.variable} ${cinzel.variable} h-full`}>
+    <html lang="nl" className={`${fustat.variable} ${inter.variable} ${poppins.variable} h-full`}>
       <head>
         {/* Marks the document as JS-capable so reveal animations only hide content when they can also show it. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.setAttribute('data-js','')" }} />

@@ -1,15 +1,20 @@
 type Tone = "dark" | "light";
 
-const tones: Record<Tone, { line: string; dot: string; text: string }> = {
-  // On dark backgrounds: white lines, accent dot
-  dark: { line: "#FFFFFF", dot: "#6E6EFF", text: "#FFFFFF" },
-  // On light backgrounds: ink lines, blue dot
-  light: { line: "#0A0A12", dot: "#0606EA", text: "#0A0A12" },
+const tones: Record<Tone, { mark: string; text: string }> = {
+  dark: { mark: "#FFFFFF", text: "#FFFFFF" },
+  light: { mark: "#0A0A12", text: "#0A0A12" },
 };
 
+/** Brand accent for the dot — the same lilac as the highlighted words on dark sections. */
+const DOT = "#6E6EFF";
+
+/**
+ * The mark: a solid V with the dot above it.
+ * Geometry in a 100×100 box; `size` is the rendered height in px.
+ */
 export function Emblem({
   tone = "dark",
-  size = 36,
+  size = 28,
   className = "",
   title,
 }: {
@@ -19,44 +24,26 @@ export function Emblem({
   title?: string;
 }) {
   const c = tones[tone];
-  // Thin lines get heavier at small sizes so the mark stays legible.
-  const thin = size >= 64 ? 7 : size >= 40 ? 9 : 11;
-  const thick = thin * 2.15;
   return (
     <svg
-      viewBox="0 0 600 600"
+      viewBox="0 0 100 100"
       width={size}
       height={size}
-      fill="none"
       role={title ? "img" : undefined}
       aria-hidden={title ? undefined : true}
       className={className}
     >
       {title ? <title>{title}</title> : null}
-      <circle cx="300" cy="300" r="215" stroke={c.line} strokeWidth={thin} />
-      <path d="M300 37V80M300 520V563M37 300H80M520 300H563" stroke={c.line} strokeWidth={thin} />
-      <path
-        d="M152 145L300 455L448 145"
-        stroke={c.line}
-        strokeWidth={thick}
-        strokeLinejoin="miter"
-        strokeMiterlimit={10}
-      />
-      <path
-        d="M152 455L300 145L448 455"
-        stroke={c.line}
-        strokeWidth={thin}
-        strokeLinejoin="miter"
-        strokeMiterlimit={10}
-      />
-      <circle cx="300" cy="300" r={size >= 64 ? 15 : 20} fill={c.dot} />
+      <path d="M2 4H28L50 47.1L72 4H98L50 98Z" fill={c.mark} />
+      <circle cx="50" cy="13" r="9" fill={DOT} />
     </svg>
   );
 }
 
+/** Mark + wordmark: "ad" medium, "vizier" bold, in Poppins. */
 export function Logo({
   tone = "dark",
-  size = 36,
+  size = 26,
   className = "",
 }: {
   tone?: Tone;
@@ -64,15 +51,16 @@ export function Logo({
   className?: string;
 }) {
   const c = tones[tone];
-  const fontSize = Math.round(size * 0.47);
+  const fontSize = Math.round(size * 1.2);
   return (
-    <span className={`inline-flex items-center gap-3.5 ${className}`}>
+    <span className={`inline-flex items-center ${className}`} style={{ gap: Math.round(size * 0.4) }}>
       <Emblem tone={tone} size={size} />
       <span
-        className="font-wordmark tracking-[0.3em]"
+        className="font-wordmark tracking-[-0.02em]"
         style={{ color: c.text, fontSize, lineHeight: 1 }}
       >
-        ADVIZIER
+        <span className="font-medium">ad</span>
+        <span className="font-bold">vizier</span>
       </span>
     </span>
   );
