@@ -22,7 +22,7 @@ const inter = localFont({
 
 const poppins = localFont({
   src: [
-    { path: "./fonts/Poppins-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Poppins-Light.woff2", weight: "300", style: "normal" },
     { path: "./fonts/Poppins-Bold.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-poppins",
