@@ -4,6 +4,7 @@ import { CheckIcon } from "@/components/icons";
 import { Backdrop } from "@/components/ui/Section";
 import { Reveal } from "@/components/Reveal";
 import { Partners } from "@/components/sections/Partners";
+import { GlowCard } from "@/components/GlowCard";
 
 export function Hero() {
   return (
@@ -63,7 +64,11 @@ export function Hero() {
 /** The tilted white card: rising ad spend against a fee percentage that steps down. No numbers on purpose. */
 function FeeCard() {
   return (
-    <div className="mx-auto w-full max-w-[500px] rotate-2 rounded-[22px] bg-white p-6 text-ink shadow-[0_40px_90px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.06)] md:p-7">
+    <GlowCard
+      tone="light"
+      elevated
+      className="mx-auto w-full max-w-[500px] rotate-2 rounded-[22px] bg-white p-6 text-ink hover:rotate-0 md:p-7"
+    >
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-soft">
           {hero.card.label}
@@ -98,6 +103,6 @@ function FeeCard() {
         <circle cx="444" cy="152" r="5" fill="#0A0A12" />
       </svg>
       <p className="mt-4 text-[14px] leading-relaxed text-soft">{hero.card.caption}</p>
-    </div>
+    </GlowCard>
   );
 }

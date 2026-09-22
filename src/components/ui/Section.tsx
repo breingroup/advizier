@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { GridSpotlight } from "@/components/GridSpotlight";
 
 type Tone = "dark" | "light";
 
@@ -28,6 +29,7 @@ export function Backdrop({
           className={`raster-fade absolute inset-0 ${tone === "dark" ? "raster-dark" : "raster-light"}`}
         />
       ) : null}
+      {raster && tone === "dark" ? <GridSpotlight /> : null}
     </div>
   );
 }

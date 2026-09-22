@@ -2,6 +2,7 @@ import { voorWie } from "@/content/home";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CheckIcon, CrossIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
+import { GlowCard } from "@/components/GlowCard";
 
 export function VoorWie() {
   return (
@@ -16,16 +17,18 @@ export function VoorWie() {
           />
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
-          <Reveal delay={100} className="rounded-2xl bg-white p-7 text-ink shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
-            <h3 className="font-heading text-[22px] font-bold">{voorWie.yes.heading}</h3>
-            <ul className="mt-5 flex flex-col gap-4">
-              {voorWie.yes.items.map((item) => (
-                <li key={item} className="flex gap-3 text-[16px] leading-[1.55]">
-                  <CheckIcon size={18} className="mt-1 shrink-0 text-blue" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <Reveal delay={100}>
+            <GlowCard tone="light" elevated className="bg-white p-7 text-ink">
+              <h3 className="font-heading text-[22px] font-bold">{voorWie.yes.heading}</h3>
+              <ul className="mt-5 flex flex-col gap-4">
+                {voorWie.yes.items.map((item) => (
+                  <li key={item} className="flex gap-3 text-[16px] leading-[1.55]">
+                    <CheckIcon size={18} className="mt-1 shrink-0 text-blue" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </GlowCard>
           </Reveal>
           <Reveal delay={200} className="p-7">
             <h3 className="font-heading text-[22px] font-bold text-muted">{voorWie.no.heading}</h3>

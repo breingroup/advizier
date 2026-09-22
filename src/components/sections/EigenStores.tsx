@@ -2,6 +2,7 @@ import { eigenStores } from "@/content/home";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Reveal } from "@/components/Reveal";
 import { FlaskIcon, ShieldCheckIcon, TrendIcon } from "@/components/icons";
+import { GlowCard } from "@/components/GlowCard";
 
 const icons = {
   shield: ShieldCheckIcon,
@@ -31,19 +32,21 @@ export function EigenStores() {
             const Icon = icons[p.icon as keyof typeof icons] ?? ShieldCheckIcon;
             return (
               <li key={p.title}>
-                <Reveal
-                  delay={i * 90}
-                  className="grid gap-4 rounded-2xl border border-line bg-white p-6 md:grid-cols-[44px_minmax(0,1fr)] md:gap-5 md:p-7"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-surface text-blue">
-                    <Icon />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h3 className="font-heading text-[20px] font-bold leading-[1.25] tracking-[-0.01em] md:text-[22px]">
-                      {p.title}
-                    </h3>
-                    <p className="text-[16px] leading-[1.6] text-soft">{p.text}</p>
-                  </div>
+                <Reveal delay={i * 90}>
+                  <GlowCard
+                    tone="light"
+                    className="grid gap-4 bg-white p-6 md:grid-cols-[44px_minmax(0,1fr)] md:gap-5 md:p-7"
+                  >
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-surface text-blue">
+                      <Icon />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <h3 className="font-heading text-[20px] font-bold leading-[1.25] tracking-[-0.01em] md:text-[22px]">
+                        {p.title}
+                      </h3>
+                      <p className="text-[16px] leading-[1.6] text-soft">{p.text}</p>
+                    </div>
+                  </GlowCard>
                 </Reveal>
               </li>
             );

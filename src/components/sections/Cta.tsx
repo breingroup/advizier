@@ -5,6 +5,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ChatIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
+import { GlowCard } from "@/components/GlowCard";
 
 export function Cta() {
   return (
@@ -18,10 +19,12 @@ export function Cta() {
             <p className="max-w-[520px] text-[18px] leading-[1.6] text-body-dark">{cta.intro}</p>
           </Reveal>
         </div>
-        <Reveal
-          delay={160}
-          className="flex flex-col items-start gap-5 rounded-[22px] bg-white p-8 text-ink shadow-[0_40px_90px_rgba(0,0,0,0.55)] md:p-10"
-        >
+        <Reveal delay={160}>
+          <GlowCard
+            tone="light"
+            elevated
+            className="flex flex-col items-start gap-5 rounded-[22px] bg-white p-8 text-ink md:p-10"
+          >
           {whatsappConnected ? (
             <WhatsAppButton label={cta.button} location="contact" size="lg" />
           ) : (
@@ -41,6 +44,7 @@ export function Cta() {
               </a>
             </p>
           ) : null}
+          </GlowCard>
         </Reveal>
       </div>
     </Section>

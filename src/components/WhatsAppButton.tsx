@@ -31,7 +31,7 @@ export function WhatsAppButton({ label, location, size = "sm", className = "" }:
           whatsapp_connected: whatsappConnected,
         });
       }}
-      className={`inline-flex items-center rounded-pill bg-blue font-semibold text-white transition-colors hover:bg-blue-hover ${sizing} ${className}`}
+      className={`inline-flex items-center rounded-pill bg-blue font-semibold text-white transition-[background-color,box-shadow,translate] duration-300 hover:-translate-y-0.5 hover:bg-blue-hover hover:shadow-[0_14px_40px_-12px_rgba(6,6,234,0.8)] active:translate-y-0 ${sizing} ${className}`}
     >
       <ChatIcon size={size === "lg" ? 20 : 18} />
       <span>{label}</span>

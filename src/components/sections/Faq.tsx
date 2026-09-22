@@ -13,10 +13,10 @@ export function Faq() {
         <Reveal delay={100} className="flex flex-col border-t border-line">
           {faq.items.map((item, i) => (
             <details key={item.q} className="group border-b border-line" open={i === 0}>
-              <summary className="flex cursor-pointer items-center justify-between gap-6 py-5 text-[18px] font-semibold leading-snug md:text-[20px]">
+              <summary className="flex cursor-pointer items-center justify-between gap-6 py-5 text-[18px] font-semibold leading-snug transition-colors duration-300 hover:text-blue md:text-[20px]">
                 <span>{item.q}</span>
                 <span
-                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line text-blue transition-transform group-open:rotate-45"
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line text-blue transition-[rotate,border-color,background-color] duration-300 group-open:rotate-45 group-hover:border-blue group-hover:bg-surface"
                   aria-hidden="true"
                 >
                   <PlusIcon size={14} />

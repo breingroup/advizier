@@ -114,3 +114,139 @@ html[data-js] [data-reveal="in"] {
     transition: none;
   }
 }
+
+/* ---------------------------------------------------------------
+   Pointer interactions: grid spotlight and glowing tiles.
+   Hover-only, and switched off for reduced motion. Lives in the
+   components layer so per-element utilities (radius, padding) win.
+   --------------------------------------------------------------- */
+@layer components {
+  /* Second grid layer that only shows around the cursor (see components/GridSpotlight.tsx) */
+  .raster-spot {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-image:
+      radial-gradient(360px circle at var(--mx, -1000px) var(--my, -1000px), rgba(110, 110, 255, 0.12), transparent 62%),
+      linear-gradient(rgba(110, 110, 255, 0.42) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(110, 110, 255, 0.42) 1px, transparent 1px);
+    background-size:
+      100% 100%,
+      72px 72px,
+      72px 72px;
+    -webkit-mask-image: radial-gradient(300px circle at var(--mx, -1000px) var(--my, -1000px), #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+    mask-image: radial-gradient(300px circle at var(--mx, -1000px) var(--my, -1000px), #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+  }
+
+  section[data-spot="on"] .raster-spot {
+    opacity: 1;
+  }
+
+  /* Tiles: a resting border, a soft glow, and a ring that lights up around the cursor */
+  .glow-card {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid var(--gc-border);
+    border-radius: 16px;
+    box-shadow: 0 10px 34px -20px rgba(6, 6, 234, 0.3);
+    transition:
+      box-shadow 0.4s ease,
+      rotate 0.4s ease,
+      translate 0.4s ease;
+  }
+
+  .glow-card[data-tone="light"] {
+    --gc-border: #e6e6f0;
+    --gc-ring: rgba(6, 6, 234, 0.9);
+    --gc-inner: rgba(6, 6, 234, 0.05);
+  }
+
+  .glow-card[data-tone="dark"] {
+    --gc-border: #1b1b2b;
+    --gc-ring: rgba(110, 110, 255, 0.9);
+    --gc-inner: rgba(110, 110, 255, 0.07);
+  }
+
+  /* Cards that float on a dark section keep their deep shadow */
+  .glow-card[data-elevated="true"] {
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
+  }
+
+  .glow-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: 2;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(
+      260px circle at var(--gx, 50%) var(--gy, 50%),
+      var(--gc-ring),
+      transparent 70%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .glow-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      340px circle at var(--gx, 50%) var(--gy, 50%),
+      var(--gc-inner),
+      transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .glow-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (hover: hover) {
+    .glow-card:hover {
+      box-shadow:
+        0 24px 70px -26px rgba(6, 6, 234, 0.6),
+        0 0 40px -22px rgba(110, 110, 255, 0.5);
+    }
+
+    .glow-card[data-elevated="true"]:hover {
+      box-shadow:
+        0 40px 90px rgba(0, 0, 0, 0.55),
+        0 0 70px -16px rgba(110, 110, 255, 0.55);
+    }
+
+    .glow-card:hover::before,
+    .glow-card:hover::after {
+      opacity: 1;
+    }
+  }
+
+  @media (hover: none) {
+    .raster-spot {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .raster-spot,
+    .glow-card,
+    .glow-card::before,
+    .glow-card::after {
+      transition: none;
+    }
+  }
+}

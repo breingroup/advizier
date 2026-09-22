@@ -12,7 +12,7 @@ export function Partners() {
         </div>
         <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:justify-end md:gap-x-12">
           {partners.items.map((p) => (
-            <li key={p.name} className="flex items-center opacity-75 transition-opacity hover:opacity-100">
+            <li key={p.name} className="flex items-center opacity-75 transition-[opacity,translate] duration-300 hover:-translate-y-0.5 hover:opacity-100">
               <Image
                 src={p.src}
                 alt={p.name}

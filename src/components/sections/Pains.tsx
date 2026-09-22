@@ -10,7 +10,7 @@ export function Pains() {
       </Reveal>
       <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
         {pains.items.map((item, i) => (
-          <Reveal key={item.title} delay={i * 100} className="flex flex-col gap-4 border-t border-line pt-6">
+          <Reveal key={item.title} delay={i * 100} className="flex flex-col gap-4 border-t border-line pt-6 transition-colors duration-300 hover:border-blue">
             <h3 className="font-heading text-[24px] font-bold leading-[1.15] tracking-[-0.01em] md:text-[26px]">
               {item.title}
             </h3>

@@ -51,7 +51,9 @@ export function ConsentBanner() {
     <div
       role="dialog"
       aria-labelledby="consent-title"
-      className="fixed bottom-4 left-4 right-4 z-50 rounded-2xl border border-line-dark bg-ground p-5 text-white shadow-[0_30px_80px_rgba(0,0,0,0.6)] md:left-6 md:right-auto md:max-w-[420px]"
+      data-tone="dark"
+      data-elevated="true"
+      className="glow-card fixed bottom-4 left-4 right-4 z-50 bg-ground p-5 text-white md:left-6 md:right-auto md:max-w-[420px]"
     >
       <div id="consent-title" className="font-heading text-[18px] font-bold">
         Cookies voor statistieken

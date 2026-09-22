@@ -21,9 +21,9 @@ export function Werkwijze() {
         </div>
         <ol className="flex flex-col">
           {werkwijze.steps.map((step, i) => (
-            <li key={step.title} className="border-t border-line-dark py-7">
+            <li key={step.title} className="group border-t border-line-dark py-7 transition-colors duration-300 hover:border-accent/40">
               <Reveal delay={i * 90} className="grid gap-4 md:grid-cols-[64px_minmax(0,1fr)] md:gap-6">
-                <div className="font-heading text-[15px] font-bold text-accent">
+                <div className="font-heading text-[15px] font-bold text-accent transition-colors duration-300 group-hover:text-white">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="flex flex-col gap-2">
