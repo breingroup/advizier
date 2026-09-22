@@ -19,10 +19,22 @@ export const hero = {
   card: {
     label: "Je fee als je groeit",
     legendSpend: "Ad spend",
-    legendFee: "Jouw percentage",
+    legendFee: "Spend fee",
     caption:
       "Hoe meer je uitgeeft aan Google Ads, hoe lager het percentage dat je aan ons betaalt. De precieze staffel bespreken we in het gesprek.",
   },
+};
+
+/** Logo strip under the hero. Files live in public/partners/ (white on transparent). */
+export const partners = {
+  label: "Partner van",
+  items: [
+    { name: "Google", src: "/partners/google.png", width: 379, height: 96 },
+    { name: "Shopify", src: "/partners/shopify.png", width: 570, height: 96 },
+    { name: "ProfitMetrics", src: "/partners/profitmetrics.png", width: 476, height: 96 },
+    { name: "Trackbee", src: "/partners/trackbee.svg", width: 364, height: 83 },
+    { name: "WeTracked", src: "/partners/wetracked.svg", width: 175, height: 30 },
+  ],
 };
 
 export const pains = {
@@ -80,14 +92,17 @@ export const eigenStores = {
     "Advizier komt uit een e-commercebedrijf met eigen webshops in Nederland, het Verenigd Koninkrijk en de Verenigde Staten. Alles wat we bij jou doen, draait eerst in onze eigen accounts.",
   points: [
     {
+      icon: "shield",
       title: "Dezelfde feeds, hetzelfde beleid, dezelfde schorsingen.",
       text: "We kennen de Merchant Center-problemen van een dropship store omdat we ze zelf hebben opgelost.",
     },
     {
+      icon: "trend",
       title: "We sturen op winst per product, niet op ROAS alleen.",
       text: "Inkoop, verzending en retouren zitten in onze cijfers. Zo weet je of een product echt geld oplevert.",
     },
     {
+      icon: "flask",
       title: "Geen theorie uit een cursus.",
       text: "Wat vandaag werkt in Google Shopping, testen we eerst op onze eigen stores en daarna bij jou.",
     },

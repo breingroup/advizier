@@ -2,6 +2,8 @@ import { hero } from "@/content/home";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CheckIcon } from "@/components/icons";
 import { Backdrop } from "@/components/ui/Section";
+import { Reveal } from "@/components/Reveal";
+import { Partners } from "@/components/sections/Partners";
 
 export function Hero() {
   return (
@@ -9,38 +11,51 @@ export function Hero() {
       <Backdrop tone="dark" raster glow="right" />
       <div className="relative mx-auto grid max-w-[1248px] gap-16 px-6 pb-24 pt-20 md:pt-28 lg:grid-cols-[minmax(0,1fr)_500px] lg:items-center lg:gap-20 lg:pb-32">
         <div className="flex max-w-[680px] flex-col gap-7">
-          <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-accent">
-            {hero.eyebrow}
-          </div>
-          <h1 className="font-heading text-[48px] font-extrabold leading-[1.02] tracking-[-0.02em] md:text-[68px] lg:text-[76px]">
-            {hero.title}
-            <br />
-            <span className="text-accent">{hero.titleAccent}</span>
-          </h1>
-          <p className="max-w-[600px] text-[18px] leading-[1.55] text-body-dark md:text-[19px]">
-            {hero.intro}
-          </p>
-          <div className="mt-1 flex flex-wrap items-center gap-x-7 gap-y-4">
-            <WhatsAppButton label={hero.primaryCta} location="hero" size="lg" />
-            <a
-              href="#werkwijze"
-              className="text-[16px] font-medium text-white underline decoration-line-dark underline-offset-[6px] transition-colors hover:decoration-accent"
-            >
-              {hero.secondaryCta}
-            </a>
-          </div>
-          <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-[14px] text-muted">
-            {hero.proofs.map((p) => (
-              <li key={p} className="flex items-center gap-2">
-                <CheckIcon className="text-accent" />
-                {p}
-              </li>
-            ))}
-          </ul>
+          <Reveal>
+            <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-accent">
+              {hero.eyebrow}
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <h1 className="font-heading text-[48px] font-extrabold leading-[1.02] tracking-[-0.02em] md:text-[68px] lg:text-[76px]">
+              {hero.title}
+              <br />
+              <span className="text-accent">{hero.titleAccent}</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={160}>
+            <p className="max-w-[600px] text-[18px] leading-[1.55] text-body-dark md:text-[19px]">
+              {hero.intro}
+            </p>
+          </Reveal>
+          <Reveal delay={240}>
+            <div className="mt-1 flex flex-wrap items-center gap-x-7 gap-y-4">
+              <WhatsAppButton label={hero.primaryCta} location="hero" size="lg" />
+              <a
+                href="#werkwijze"
+                className="text-[16px] font-medium text-white underline decoration-line-dark underline-offset-[6px] transition-colors hover:decoration-accent"
+              >
+                {hero.secondaryCta}
+              </a>
+            </div>
+          </Reveal>
+          <Reveal delay={320}>
+            <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-[14px] text-muted">
+              {hero.proofs.map((p) => (
+                <li key={p} className="flex items-center gap-2">
+                  <CheckIcon className="text-accent" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
 
-        <FeeCard />
+        <Reveal delay={200}>
+          <FeeCard />
+        </Reveal>
       </div>
+      <Partners />
     </section>
   );
 }

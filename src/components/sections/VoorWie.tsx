@@ -1,19 +1,22 @@
 import { voorWie } from "@/content/home";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CheckIcon, CrossIcon } from "@/components/icons";
+import { Reveal } from "@/components/Reveal";
 
 export function VoorWie() {
   return (
-    <Section id="voor-wie" tone="dark">
+    <Section id="voor-wie" tone="dark" raster>
       <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
-        <SectionHeading
-          title={voorWie.title}
-          accent={voorWie.titleAccent}
-          label={voorWie.label}
-          tone="dark"
-        />
+        <Reveal>
+          <SectionHeading
+            title={voorWie.title}
+            accent={voorWie.titleAccent}
+            label={voorWie.label}
+            tone="dark"
+          />
+        </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl bg-white p-7 text-ink shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+          <Reveal delay={100} className="rounded-2xl bg-white p-7 text-ink shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
             <h3 className="font-heading text-[22px] font-bold">{voorWie.yes.heading}</h3>
             <ul className="mt-5 flex flex-col gap-4">
               {voorWie.yes.items.map((item) => (
@@ -23,8 +26,8 @@ export function VoorWie() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="p-7">
+          </Reveal>
+          <Reveal delay={200} className="p-7">
             <h3 className="font-heading text-[22px] font-bold text-muted">{voorWie.no.heading}</h3>
             <ul className="mt-5 flex flex-col gap-4">
               {voorWie.no.items.map((item) => (
@@ -34,7 +37,7 @@ export function VoorWie() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </div>
     </Section>

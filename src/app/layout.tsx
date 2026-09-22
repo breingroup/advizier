@@ -58,6 +58,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl" className={`${fustat.variable} ${inter.variable} ${cinzel.variable} h-full`}>
       <head>
+        {/* Marks the document as JS-capable so reveal animations only hide content when they can also show it. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.setAttribute('data-js','')" }} />
         <ConsentDefaults />
       </head>
       <body className="flex min-h-full flex-col">

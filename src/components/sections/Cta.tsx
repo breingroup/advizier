@@ -4,16 +4,24 @@ import { whatsappConnected } from "@/lib/whatsapp";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ChatIcon } from "@/components/icons";
+import { Reveal } from "@/components/Reveal";
 
 export function Cta() {
   return (
     <Section id="contact" tone="dark" raster glow="right">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] lg:items-center lg:gap-20">
         <div className="flex flex-col gap-8">
-          <SectionHeading title={cta.title} accent={cta.titleAccent} tone="dark" as="h2" />
-          <p className="max-w-[520px] text-[18px] leading-[1.6] text-body-dark">{cta.intro}</p>
+          <Reveal>
+            <SectionHeading title={cta.title} accent={cta.titleAccent} tone="dark" as="h2" />
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="max-w-[520px] text-[18px] leading-[1.6] text-body-dark">{cta.intro}</p>
+          </Reveal>
         </div>
-        <div className="flex flex-col items-start gap-5 rounded-[22px] bg-white p-8 text-ink shadow-[0_40px_90px_rgba(0,0,0,0.55)] md:p-10">
+        <Reveal
+          delay={160}
+          className="flex flex-col items-start gap-5 rounded-[22px] bg-white p-8 text-ink shadow-[0_40px_90px_rgba(0,0,0,0.55)] md:p-10"
+        >
           {whatsappConnected ? (
             <WhatsAppButton label={cta.button} location="contact" size="lg" />
           ) : (
@@ -33,7 +41,7 @@ export function Cta() {
               </a>
             </p>
           ) : null}
-        </div>
+        </Reveal>
       </div>
     </Section>
   );
