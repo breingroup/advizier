@@ -2,6 +2,36 @@ import type { ReactNode } from "react";
 
 type Tone = "dark" | "light";
 
+/**
+ * Decorative background layers. Only the hero and the closing CTA carry the grid + glow;
+ * every other section is a flat ground or white surface, so the page alternates cleanly.
+ */
+export function Backdrop({
+  tone,
+  raster = false,
+  glow,
+}: {
+  tone: Tone;
+  raster?: boolean;
+  glow?: "left" | "right";
+}) {
+  if (!raster && !glow) return null;
+  return (
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+      {glow ? (
+        <div
+          className={`glow-blue absolute -top-80 ${glow === "right" ? "-right-64" : "-left-[26rem]"}`}
+        />
+      ) : null}
+      {raster ? (
+        <div
+          className={`raster-fade absolute inset-0 ${tone === "dark" ? "raster-dark" : "raster-light"}`}
+        />
+      ) : null}
+    </div>
+  );
+}
+
 export function Section({
   id,
   tone,
@@ -15,25 +45,18 @@ export function Section({
   tone: Tone;
   raster?: boolean;
   glow?: "left" | "right";
-  /** Draw a hairline at the top (used between two light sections). */
+  /** Hairline at the top, for the rare case two light sections touch. */
   line?: boolean;
   className?: string;
   children: ReactNode;
 }) {
-  const base =
-    tone === "dark"
-      ? "bg-ground text-white"
-      : "bg-white text-ink";
-  const rasterClass = raster ? (tone === "dark" ? "raster-dark" : "raster-light") : "";
-  const glowClass = glow === "left" ? "glow-left" : glow === "right" ? "glow-right" : "";
+  const base = tone === "dark" ? "bg-ground text-white" : "bg-white text-ink";
 
   return (
-    <section
-      id={id}
-      className={`relative overflow-hidden ${base} ${rasterClass} ${glowClass} ${className}`}
-    >
+    <section id={id} className={`relative ${base} ${className}`}>
+      <Backdrop tone={tone} raster={raster} glow={glow} />
       {line ? (
-        <div className="mx-auto max-w-[1248px] px-6">
+        <div className="relative mx-auto max-w-[1248px] px-6">
           <div className="h-px bg-line" />
         </div>
       ) : null}

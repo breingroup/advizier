@@ -10,18 +10,20 @@ import { VoorWie } from "@/components/sections/VoorWie";
 import { Faq } from "@/components/sections/Faq";
 import { Cta } from "@/components/sections/Cta";
 import { faqJsonLd, organizationJsonLd } from "@/lib/jsonld";
+import { resultaten } from "@/content/home";
 
 export default function HomePage() {
   return (
     <>
       <Nav />
       <main className="flex-1">
+        {/* Tones alternate: dark, light, dark, light, (dark), light, dark, light, dark */}
         <Hero />
         <Pains />
         <Werkwijze />
         <EigenStores />
         <Resultaten />
-        <Fee />
+        <Fee line={!resultaten.enabled} />
         <VoorWie />
         <Faq />
         <Cta />

@@ -3,6 +3,7 @@ import { site } from "@/content/site";
 import { whatsappConnected } from "@/lib/whatsapp";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { ChatIcon } from "@/components/icons";
 
 export function Cta() {
   return (
@@ -12,21 +13,22 @@ export function Cta() {
           <SectionHeading title={cta.title} accent={cta.titleAccent} tone="dark" as="h2" />
           <p className="max-w-[520px] text-[18px] leading-[1.6] text-body-dark">{cta.intro}</p>
         </div>
-        <div className="flex flex-col items-start gap-5 rounded-[22px] border border-line-dark bg-white/[0.03] p-8 md:p-10">
+        <div className="flex flex-col items-start gap-5 rounded-[22px] bg-white p-8 text-ink shadow-[0_40px_90px_rgba(0,0,0,0.55)] md:p-10">
           {whatsappConnected ? (
             <WhatsAppButton label={cta.button} location="contact" size="lg" />
           ) : (
             <>
-              <div className="inline-flex h-14 items-center rounded-pill border border-line-dark px-7 text-[17px] font-semibold text-muted">
+              <div className="inline-flex h-14 items-center gap-3 rounded-pill bg-surface px-7 text-[17px] font-semibold text-soft">
+                <ChatIcon size={20} />
                 {cta.button}
               </div>
-              <p className="text-[14px] text-muted">{cta.pending}</p>
+              <p className="text-[14px] text-soft">{cta.pending}</p>
             </>
           )}
           {site.email ? (
-            <p className="text-[15px] text-muted">
+            <p className="text-[15px] text-soft">
               Liever mailen?{" "}
-              <a href={`mailto:${site.email}`} className="text-white underline underline-offset-4">
+              <a href={`mailto:${site.email}`} className="text-blue underline underline-offset-4">
                 {site.email}
               </a>
             </p>

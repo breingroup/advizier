@@ -5,8 +5,8 @@
 
 export const hero = {
   eyebrow: "Google Ads voor dropship stores",
-  title: "Google Ads die je store laten schalen.",
-  titleAccent: "Zonder dat je fee meeschaalt.",
+  title: "Google Ads die schalen.",
+  titleAccent: "Je fee niet.",
   intro:
     "Advizier beheert het Google Ads-account van dropshippers op Shopify. Je betaalt een percentage van je ad spend, en dat percentage daalt naarmate je groeit. Geen vaste fee, geen performance fee.",
   primaryCta: "App ons op WhatsApp",

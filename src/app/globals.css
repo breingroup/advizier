@@ -43,7 +43,6 @@ body {
   background: var(--color-ground);
   color: #ffffff;
   font-family: var(--font-body);
-  font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -52,45 +51,37 @@ body {
   outline-offset: 3px;
 }
 
-/* Faint grid that sits behind hero and section backgrounds */
+/* Backdrop layers (rendered by <Backdrop />, always behind content) */
 .raster-dark {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 72px 72px;
 }
 
 .raster-light {
   background-image:
-    linear-gradient(rgba(10, 10, 18, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 10, 18, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(10, 10, 18, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 18, 0.05) 1px, transparent 1px);
   background-size: 72px 72px;
 }
 
-/* Blue glow used on the dark hero and CTA sections */
-.glow-right::before,
-.glow-left::before {
-  content: "";
-  position: absolute;
-  top: -320px;
+/* The grid fades out towards the edges so it never reads as a table */
+.raster-fade {
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 25%, #000 25%, transparent 92%);
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 25%, #000 25%, transparent 92%);
+}
+
+.glow-blue {
   width: 1100px;
   height: 1100px;
   border-radius: 50%;
-  pointer-events: none;
   background: radial-gradient(
     circle,
-    rgba(6, 6, 234, 0.6) 0%,
-    rgba(6, 6, 234, 0.22) 32%,
+    rgba(6, 6, 234, 0.55) 0%,
+    rgba(6, 6, 234, 0.2) 32%,
     rgba(5, 5, 16, 0) 62%
   );
-}
-
-.glow-right::before {
-  right: -260px;
-}
-
-.glow-left::before {
-  left: -420px;
 }
 
 /* Native <details> accordions: hide the default marker */

@@ -2,12 +2,6 @@ export const faq = {
   title: "Wat je je",
   titleAccent: "nu afvraagt.",
   label: "FAQ",
-  // TODO: who takes the first conversation, one or two sentences. Shown next to the FAQ.
-  host: {
-    name: "[Naam]",
-    role: "Oprichter van Advizier",
-    text: "Je eerste gesprek is met [naam]. Daarna werkt een vaste specialist aan je account.",
-  },
   items: [
     {
       q: "Werkt Google Ads wel voor dropshipping?",

@@ -1,17 +1,21 @@
 import { hero } from "@/content/home";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CheckIcon } from "@/components/icons";
+import { Backdrop } from "@/components/ui/Section";
 
 export function Hero() {
   return (
-    <section id="top" className="raster-dark glow-right relative overflow-hidden bg-ground text-white">
+    <section id="top" className="relative bg-ground text-white">
+      <Backdrop tone="dark" raster glow="right" />
       <div className="relative mx-auto grid max-w-[1248px] gap-16 px-6 pb-24 pt-20 md:pt-28 lg:grid-cols-[minmax(0,1fr)_500px] lg:items-center lg:gap-20 lg:pb-32">
         <div className="flex max-w-[680px] flex-col gap-7">
           <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-accent">
             {hero.eyebrow}
           </div>
-          <h1 className="font-heading text-[44px] font-extrabold leading-[1.02] tracking-[-0.02em] md:text-[64px] lg:text-[72px]">
-            {hero.title} <span className="text-accent">{hero.titleAccent}</span>
+          <h1 className="font-heading text-[48px] font-extrabold leading-[1.02] tracking-[-0.02em] md:text-[68px] lg:text-[76px]">
+            {hero.title}
+            <br />
+            <span className="text-accent">{hero.titleAccent}</span>
           </h1>
           <p className="max-w-[600px] text-[18px] leading-[1.55] text-body-dark md:text-[19px]">
             {hero.intro}

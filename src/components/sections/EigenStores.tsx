@@ -4,7 +4,7 @@ import { Emblem } from "@/components/Logo";
 
 export function EigenStores() {
   return (
-    <Section tone="light" line>
+    <Section tone="light">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         <div className="flex flex-col gap-8">
           <SectionHeading

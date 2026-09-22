@@ -3,9 +3,9 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { hero } from "@/content/home";
 
-export function Fee() {
+export function Fee({ line = false }: { line?: boolean }) {
   return (
-    <Section id="fee" tone="light" line>
+    <Section id="fee" tone="light" line={line}>
       <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         <div className="flex flex-col gap-8">
           <SectionHeading title={fee.title} accent={fee.titleAccent} label={fee.label} tone="light" />
