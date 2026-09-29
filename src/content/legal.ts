@@ -6,12 +6,12 @@ export type LegalSection = { heading: string; paragraphs: string[] };
 
 export const privacy: { title: string; updated: string; sections: LegalSection[] } = {
   title: "Privacyverklaring",
-  updated: "[datum]",
+  updated: "29-09-2026",
   sections: [
     {
       heading: "Wie we zijn",
       paragraphs: [
-        "[Bedrijfsnaam], gevestigd aan [adres], ingeschreven bij de KVK onder nummer [KVK-nummer], is verantwoordelijk voor de verwerking van persoonsgegevens zoals beschreven in deze verklaring.",
+        "Advizier, gevestigd aan Panovenweg 1 5708JA in helmond, ingeschreven bij de KVK onder nummer 94765782, is verantwoordelijk voor de verwerking van persoonsgegevens zoals beschreven in deze verklaring.",
       ],
     },
     {
@@ -23,12 +23,12 @@ export const privacy: { title: string; updated: string; sections: LegalSection[]
     },
     {
       heading: "Bewaartermijnen",
-      paragraphs: ["[Bewaartermijn voor gespreksgegevens en statistieken.]"],
+      paragraphs: ["Je gegevens worden voor minimaal 7 jaar bewaard. conform met de fiscale bewaarplicht"],
     },
     {
       heading: "Je rechten",
       paragraphs: [
-        "Je kunt je gegevens inzien, laten corrigeren of laten verwijderen. Stuur daarvoor een bericht naar [e-mailadres]. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens.",
+        "Je kunt je gegevens inzien, laten corrigeren of laten verwijderen. Stuur daarvoor een bericht naar info@jhbautomotive.nl. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens.",
       ],
     },
   ],
@@ -36,11 +36,11 @@ export const privacy: { title: string; updated: string; sections: LegalSection[]
 
 export const voorwaarden: { title: string; updated: string; sections: LegalSection[] } = {
   title: "Algemene voorwaarden",
-  updated: "[datum]",
+  updated: "29-09-2026",
   sections: [
     {
       heading: "Toepasselijkheid",
-      paragraphs: ["[Deze voorwaarden gelden voor alle diensten van [Bedrijfsnaam].]"],
+      paragraphs: ["Deze voorwaarden gelden voor alle diensten van Advizier."],
     },
     {
       heading: "De dienst",
