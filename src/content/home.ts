@@ -114,7 +114,7 @@ export const eigenStores = {
  * TODO: replace the placeholder cases with real numbers (Shopify + Google Ads) and set enabled: true.
  */
 export const resultaten = {
-  enabled: false,
+  enabled: true,
   title: "Eén maand.",
   titleAccent: "Drie stores.",
   label: "Resultaten",
