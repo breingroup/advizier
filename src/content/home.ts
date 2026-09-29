@@ -121,9 +121,9 @@ export const resultaten = {
   intro:
     "Drie dropship stores, dezelfde dertig dagen, alle drie op Google Ads met ons. Groei tegenover de dertig dagen ervoor.",
   cases: [
-    { store: "[Store 1]", revenue: "€[XX.XXX]", growth: "+[XX]%", note: "omzet, 30 dagen" },
-    { store: "[Store 2]", revenue: "€[XX.XXX]", growth: "+[XX]%", note: "omzet, 30 dagen" },
-    { store: "[Store 3]", revenue: "$[XX.XXX]", growth: "+[XX]%", note: "omzet, 30 dagen" },
+    { store: "Fashion - NL", revenue: "€87.842", growth: "+7%", note: "omzet, 30 dagen" },
+    { store: "Fashion - USA", revenue: "€46.876", growth: "+13%", note: "omzet, 30 dagen" },
+    { store: "Fashion - UK", revenue: "$52.765", growth: "+11%", note: "omzet, 30 dagen" },
   ],
   footnote: "Bedragen uit Shopify en Google Ads. Namen en stores laten we weg.",
 };
