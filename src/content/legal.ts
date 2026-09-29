@@ -23,7 +23,7 @@ export const privacy: { title: string; updated: string; sections: LegalSection[]
     },
     {
       heading: "Bewaartermijnen",
-      paragraphs: "Je gegevens worden voor minimaal 7 jaar bewaard. conform met de fiscale bewaarplicht",
+      paragraphs: ["Je gegevens worden voor minimaal 7 jaar bewaard. conform met de fiscale bewaarplicht"],
     },
     {
       heading: "Je rechten",
