@@ -10,7 +10,7 @@ export const faq = {
     {
       q: "Hoeveel budget heb ik nodig?",
       // TODO: fill in the minimum spend.
-      a: "We nemen stores aan vanaf €[X] per maand aan Google Ads-spend, alle stores samen. Daaronder leert Google te langzaam om zinnig op te sturen.",
+      a: "We nemen stores aan vanaf +- €1500 per maand aan Google Ads-spend, alle stores samen. Daaronder leert Google te langzaam om zinnig op te sturen.",
     },
     {
       q: "Mijn Merchant Center is geschorst. Kunnen jullie helpen?",
