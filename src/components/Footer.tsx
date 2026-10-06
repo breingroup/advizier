@@ -33,7 +33,10 @@ export function Footer() {
             </>
           ) : null}
         </div>
-        <nav aria-label="Juridisch" className="flex gap-6 text-[13px] font-medium">
+        <nav aria-label="Juridisch" className="flex flex-wrap gap-6 text-[13px] font-medium">
+          <Link href="/lokaal" className="text-accent hover:text-white">
+            Lokale ondernemers
+          </Link>
           <Link href="/privacy" className="text-accent hover:text-white">
             Privacyverklaring
           </Link>

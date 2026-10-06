@@ -160,6 +160,13 @@ export const voorWie = {
   title: "Voor wie",
   titleAccent: "het is.",
   label: "Wel of niet",
+  // Pointer to the local-business page, shown under the two columns.
+  aside: {
+    title: "Geen webshop, maar een bedrijf in de regio?",
+    text: "Voor installateurs, garages, praktijken en winkels doen we zoekadvertenties en Google Maps, gemeten op bellen, route en aanvragen.",
+    link: "Google Ads voor lokale ondernemers",
+    href: "/lokaal",
+  },
   yes: {
     heading: "Wel",
     items: [

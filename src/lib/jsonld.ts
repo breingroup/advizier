@@ -14,11 +14,11 @@ export function organizationJsonLd() {
   };
 }
 
-export function faqJsonLd() {
+export function faqJsonLd(items: readonly { q: string; a: string }[] = faq.items) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faq.items.map((item) => ({
+    mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.q,
       acceptedAnswer: { "@type": "Answer", text: item.a },

@@ -1,10 +1,13 @@
-import { werkwijze } from "@/content/home";
+import { werkwijze as defaultData } from "@/content/home";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Reveal } from "@/components/Reveal";
 
-export function Werkwijze() {
+type WerkwijzeData = typeof defaultData;
+
+export function Werkwijze({ data = defaultData, id = "werkwijze" }: { data?: WerkwijzeData; id?: string }) {
+  const werkwijze = data;
   return (
-    <Section id="werkwijze" tone="dark" raster>
+    <Section id={id} tone="dark" raster>
       <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         <div className="flex flex-col gap-8">
           <Reveal>

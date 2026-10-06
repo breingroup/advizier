@@ -1,11 +1,19 @@
-import { faq } from "@/content/faq";
+import { faq as defaultData } from "@/content/faq";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { PlusIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 
-export function Faq() {
+type FaqData = {
+  title: string;
+  titleAccent: string;
+  label: string;
+  items: readonly { q: string; a: string }[];
+};
+
+export function Faq({ data = defaultData, id = "faq" }: { data?: FaqData; id?: string }) {
+  const faq = data;
   return (
-    <Section id="faq" tone="light">
+    <Section id={id} tone="light">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         <Reveal>
           <SectionHeading title={faq.title} accent={faq.titleAccent} label={faq.label} tone="light" />

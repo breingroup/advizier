@@ -1,12 +1,24 @@
-import { voorWie } from "@/content/home";
+import Link from "next/link";
+import { voorWie as defaultData } from "@/content/home";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { CheckIcon, CrossIcon } from "@/components/icons";
+import { ArrowIcon, CheckIcon, CrossIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { GlowCard } from "@/components/GlowCard";
 
-export function VoorWie() {
+type Aside = { title: string; text: string; link: string; href: string };
+type VoorWieData = {
+  title: string;
+  titleAccent: string;
+  label: string;
+  yes: { heading: string; items: readonly string[] };
+  no: { heading: string; items: readonly string[] };
+  aside?: Aside;
+};
+
+export function VoorWie({ data = defaultData, id = "voor-wie" }: { data?: VoorWieData; id?: string }) {
+  const voorWie = data;
   return (
-    <Section id="voor-wie" tone="dark" raster>
+    <Section id={id} tone="dark" raster>
       <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         <Reveal>
           <SectionHeading
@@ -43,6 +55,28 @@ export function VoorWie() {
           </Reveal>
         </div>
       </div>
+      {voorWie.aside ? (
+        <Reveal delay={120} className="mt-12">
+          <GlowCard
+            tone="dark"
+            className="flex flex-col gap-4 bg-white/[0.03] p-6 md:flex-row md:items-center md:justify-between md:gap-10 md:p-7"
+          >
+            <div className="flex flex-col gap-1.5">
+              <h3 className="font-heading text-[20px] font-bold leading-[1.25] md:text-[22px]">
+                {voorWie.aside.title}
+              </h3>
+              <p className="max-w-[640px] text-[15px] leading-[1.6] text-muted">{voorWie.aside.text}</p>
+            </div>
+            <Link
+              href={voorWie.aside.href}
+              className="inline-flex shrink-0 items-center gap-2 text-[16px] font-semibold text-accent transition-colors hover:text-white"
+            >
+              {voorWie.aside.link}
+              <ArrowIcon />
+            </Link>
+          </GlowCard>
+        </Reveal>
+      ) : null}
     </Section>
   );
 }

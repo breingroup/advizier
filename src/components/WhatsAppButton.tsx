@@ -9,10 +9,12 @@ type Props = {
   location: string;
   size?: "sm" | "lg";
   className?: string;
+  /** Pre-filled opening message; defaults to the e-com one from content/site.ts. */
+  message?: string;
 };
 
-export function WhatsAppButton({ label, location, size = "sm", className = "" }: Props) {
-  const href = whatsappHref();
+export function WhatsAppButton({ label, location, size = "sm", className = "", message }: Props) {
+  const href = whatsappHref(message);
   const sizing =
     size === "lg"
       ? "h-14 px-7 text-[17px] gap-3"

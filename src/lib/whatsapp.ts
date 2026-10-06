@@ -7,9 +7,9 @@ export const whatsappConnected = site.whatsapp.number.replace(/\D/g, "").length 
  * Click-to-chat link. Falls back to the contact section while no number is set,
  * so the buttons never point at a broken link.
  */
-export function whatsappHref(): string {
+export function whatsappHref(message: string = site.whatsapp.message): string {
   const digits = site.whatsapp.number.replace(/\D/g, "");
   if (!digits) return "#contact";
-  const text = encodeURIComponent(site.whatsapp.message);
+  const text = encodeURIComponent(message);
   return `https://wa.me/${digits}?text=${text}`;
 }

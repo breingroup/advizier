@@ -1,4 +1,4 @@
-import { cta } from "@/content/home";
+import { cta as defaultData } from "@/content/home";
 import { site } from "@/content/site";
 import { whatsappConnected } from "@/lib/whatsapp";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -7,7 +7,10 @@ import { ChatIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { GlowCard } from "@/components/GlowCard";
 
-export function Cta() {
+type CtaData = typeof defaultData;
+
+export function Cta({ data = defaultData, message }: { data?: CtaData; message?: string }) {
+  const cta = data;
   return (
     <Section id="contact" tone="dark" raster glow="right">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] lg:items-center lg:gap-20">
@@ -26,7 +29,7 @@ export function Cta() {
             className="flex flex-col items-start gap-5 rounded-[22px] bg-white p-8 text-ink md:p-10"
           >
           {whatsappConnected ? (
-            <WhatsAppButton label={cta.button} location="contact" size="lg" />
+            <WhatsAppButton label={cta.button} location="contact" size="lg" message={message} />
           ) : (
             <>
               <div className="inline-flex h-14 items-center gap-3 rounded-pill bg-surface px-7 text-[17px] font-semibold text-soft">
