@@ -4,11 +4,11 @@
  */
 
 export const hero = {
-  eyebrow: "Google Ads voor dropship stores",
+  eyebrow: "Google Ads voor e-com stores",
   title: "Google Ads die schalen.",
   titleAccent: "Je fee niet.",
   intro:
-    "Advizier beheert het Google Ads-account van dropshippers op Shopify. Je betaalt een percentage van je ad spend, en dat percentage daalt naarmate je groeit. Geen vaste fee, geen performance fee.",
+    "Advizier beheert het Google Ads-account van e-com stores op Shopify. Je betaalt een percentage van je ad spend, en dat percentage daalt naarmate je groeit. Geen vaste fee, geen performance fee.",
   primaryCta: "App ons op WhatsApp",
   secondaryCta: "Bekijk hoe we werken",
   proofs: [
@@ -59,7 +59,7 @@ export const pains = {
 
 export const werkwijze = {
   title: "Zo pakken we",
-  titleAccent: "een dropship store aan.",
+  titleAccent: "een e-com store aan.",
   label: "Hoe we werken",
   intro:
     "Geen trucs, wel een structuur die blijft werken als je groeit. Een vaste specialist kent je account en beslist elke week op data.",
@@ -94,7 +94,7 @@ export const eigenStores = {
     {
       icon: "shield",
       title: "Dezelfde feeds, hetzelfde beleid, dezelfde schorsingen.",
-      text: "We kennen de Merchant Center-problemen van een dropship store omdat we ze zelf hebben opgelost.",
+      text: "We kennen de Merchant Center-problemen van een e-com store omdat we ze zelf hebben opgelost.",
     },
     {
       icon: "trend",
@@ -119,11 +119,11 @@ export const resultaten = {
   titleAccent: "Drie stores.",
   label: "Resultaten",
   intro:
-    "Drie dropship stores, dezelfde dertig dagen, alle drie op Google Ads met ons. Groei tegenover de dertig dagen ervoor.",
+    "Drie e-com stores, dezelfde dertig dagen, alle drie op Google Ads met ons. Groei tegenover de dertig dagen ervoor.",
   cases: [
-    { store: "Fashion - NL", revenue: "€87.842", growth: "+7%", note: "omzet, 30 dagen" },
-    { store: "Fashion - USA", revenue: "€46.876", growth: "+13%", note: "omzet, 30 dagen" },
-    { store: "Fashion - UK", revenue: "$52.765", growth: "+11%", note: "omzet, 30 dagen" },
+    { store: "[Store 1]", revenue: "€[XX.XXX]", growth: "+[XX]%", note: "omzet, 30 dagen" },
+    { store: "[Store 2]", revenue: "€[XX.XXX]", growth: "+[XX]%", note: "omzet, 30 dagen" },
+    { store: "[Store 3]", revenue: "$[XX.XXX]", growth: "+[XX]%", note: "omzet, 30 dagen" },
   ],
   footnote: "Bedragen uit Shopify en Google Ads. Namen en stores laten we weg.",
 };
@@ -163,7 +163,7 @@ export const voorWie = {
   yes: {
     heading: "Wel",
     items: [
-      "Je runt een dropship store op Shopify",
+      "Je runt een e-com store op Shopify",
       // TODO: fill in the minimum monthly ad spend you take clients on at.
       "Je geeft minimaal €[X] per maand uit aan Google Ads, alle stores samen, of dat budget ligt klaar",
       "Je wilt schalen op winst, niet alleen op omzet",

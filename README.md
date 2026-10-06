@@ -1,6 +1,6 @@
 # Advizier — website
 
-Marketing site for Advizier (Google Ads for dropship stores). One long page in the adship.nl structure, plus privacy and terms pages.
+Marketing site for Advizier (Google Ads for e-com stores). One long page in the adship.nl structure, plus privacy and terms pages.
 
 **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · self-hosted fonts (Fustat, Inter, Cinzel) · deployed on Vercel from GitHub.
 

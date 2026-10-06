@@ -4,13 +4,13 @@ export const faq = {
   label: "FAQ",
   items: [
     {
-      q: "Werkt Google Ads wel voor dropshipping?",
+      q: "Werkt Google Ads wel voor e-com?",
       a: "Ja, als de basis klopt: producten waar al naar gezocht wordt, een feed die goedgekeurd blijft en tracking die klopt. Google Shopping vangt koopintentie op, en dat is precies waarom het stabieler schaalt dan advertenties die interesse moeten wekken.",
     },
     {
       q: "Hoeveel budget heb ik nodig?",
       // TODO: fill in the minimum spend.
-      a: "We nemen stores aan vanaf +- €1500 per maand aan Google Ads-spend, alle stores samen. Daaronder leert Google te langzaam om zinnig op te sturen.",
+      a: "We nemen stores aan vanaf €[X] per maand aan Google Ads-spend, alle stores samen. Daaronder leert Google te langzaam om zinnig op te sturen.",
     },
     {
       q: "Mijn Merchant Center is geschorst. Kunnen jullie helpen?",

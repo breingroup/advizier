@@ -36,6 +36,14 @@ export function Cta() {
               <p className="text-[14px] text-soft">{cta.pending}</p>
             </>
           )}
+          {site.phone ? (
+            <p className="text-[15px] text-soft">
+              Liever bellen?{" "}
+              <a href={site.phone.href} className="text-blue underline underline-offset-4">
+                {site.phone.display}
+              </a>
+            </p>
+          ) : null}
           {site.email ? (
             <p className="text-[15px] text-soft">
               Liever mailen?{" "}

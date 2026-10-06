@@ -16,6 +16,14 @@ export function Footer() {
         </Link>
         <div className="text-[13px] text-muted">
           © {year} {legal}
+          {site.phone ? (
+            <>
+              {" · "}
+              <a href={site.phone.href} className="hover:text-white">
+                {site.phone.display}
+              </a>
+            </>
+          ) : null}
           {site.email ? (
             <>
               {" · "}
