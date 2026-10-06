@@ -172,7 +172,7 @@ export const voorWie = {
     items: [
       "Je runt een e-com store op Shopify",
       // TODO: fill in the minimum monthly ad spend you take clients on at.
-      "Je geeft minimaal €[X] per maand uit aan Google Ads, alle stores samen, of dat budget ligt klaar",
+      "Je geeft minimaal €1500 per maand uit aan Google Ads, alle stores samen, of dat budget ligt klaar",
       "Je wilt schalen op winst, niet alleen op omzet",
     ],
   },
